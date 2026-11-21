@@ -1,0 +1,11 @@
+# ---------------------------------------------------------------------
+# .htaccess  (Apache: XAMPP, Laragon, InfinityFree)
+# Seguridad básica: impide listar carpetas y bloquea el acceso directo
+# a las carpetas internas y al archivo .sql desde el navegador.
+# Todo debe entrar por index.php.
+# ---------------------------------------------------------------------
+Options -Indexes
+DirectoryIndex index.php
+
+RedirectMatch 403 /(config|core|models|controllers|views)(/|$)
+RedirectMatch 403 \.(sql|md|log)$
